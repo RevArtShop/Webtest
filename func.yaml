@@ -1,0 +1,18 @@
+name: my-function
+namespace: default
+runtime: node # hoặc python, go, java, v.v.
+image: quay.io/my-repo/my-function:latest
+envs:
+  - name: MY_ENV_VARIABLE
+    value: "my-value"
+resources:
+  limits:
+    memory: "256Mi"
+    cpu: "500m"
+  requests:
+    memory: "128Mi"
+    cpu: "250m"
+labels:
+  app: my-function
+annotations:
+  description: "My serverless function"
